@@ -33,7 +33,7 @@ const saveHighScore=function(event)
             highScore.push(player);
         else if(highScore[0].score>=player.score){
             alert('Beat the top 10 player to be recorded your score!!');
-            window.location.assign('/');
+            window.location.assign('./');
         }
         else {
             highScore.splice(0, 1);
@@ -45,7 +45,7 @@ const saveHighScore=function(event)
         return a.score-b.score;
     });
     localStorage.setItem('highScore',JSON.stringify(highScore));
-    window.location.assign('/');
+    window.location.assign('./');
 }
 
 
