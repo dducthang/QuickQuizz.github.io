@@ -4,100 +4,7 @@ const choices = Array.from(document.getElementsByClassName('choice-prefix'));
 const questionCounter=document.getElementById('question-counter');
 const gameScore=document.getElementById('score');
 const congressBar = document.getElementById('congress-bar-full');
-let questions = [
-    // {
-    //     question:'q1',
-    //     choice1:'choice1',
-    //     choice2:'choice2',
-    //     choice3:'choice3',
-    //     choice4:'choice4',
-    //     correctChoice:1
-    // },
-    // {
-    //     "category": "Science & Nature",
-    //     "type": "multiple",
-    //     "difficulty": "medium",
-    //     "question": "Along with Oxygen, which element is primarily responsible for the sky appearing blue?",
-    //     "correct_answer": "Nitrogen",
-    //     "incorrect_answers": [
-    //         "Helium",
-    //         "Carbon",
-    //         "Hydrogen"
-    //     ]
-    // },
-    // {
-    //     "category": "Science & Nature",
-    //     "type": "multiple",
-    //     "difficulty": "medium",
-    //     "question": "The moons, Miranda, Ariel, Umbriel, Titania and Oberon orbit which planet?",
-    //     "correct_answer": "Uranus",
-    //     "incorrect_answers": [
-    //         "Jupiter",
-    //         "Venus",
-    //         "Neptune"
-    //     ]
-    // },
-    // {
-    //     "category": "Science & Nature",
-    //     "type": "multiple",
-    //     "difficulty": "medium",
-    //     "question": "Which chemical element has the lowest boiling point?",
-    //     "correct_answer": "Helium",
-    //     "incorrect_answers": [
-    //         "Hydrogen",
-    //         "Neon",
-    //         "Nitrogen"
-    //     ]
-    // },
-    // {
-    //     "category": "Science & Nature",
-    //     "type": "multiple",
-    //     "difficulty": "medium",
-    //     "question": "Which element has the atomic number of 7?",
-    //     "correct_answer": "Nitrogen",
-    //     "incorrect_answers": [
-    //         "Oxygen",
-    //         "Hydrogen",
-    //         "Neon"
-    //     ]
-    // },
-    // {
-    //     "category": "Science & Nature",
-    //     "type": "multiple",
-    //     "difficulty": "medium",
-    //     "question": "Which psychological term refers to the stress of holding contrasting beliefs?",
-    //     "correct_answer": "Cognitive Dissonance",
-    //     "incorrect_answers": [
-    //         "Flip-Flop Syndrome",
-    //         "Split-Brain",
-    //         "Blind Sight"
-    //     ]
-    // },
-    // {
-    //     "category": "Science & Nature",
-    //     "type": "multiple",
-    //     "difficulty": "medium",
-    //     "question": "The &quot;Tibia&quot; is found in which part of the body?",
-    //     "correct_answer": "Leg",
-    //     "incorrect_answers": [
-    //         "Arm",
-    //         "Hand",
-    //         "Head"
-    //     ]
-    // },
-    // {
-    //     "category": "Science & Nature",
-    //     "type": "multiple",
-    //     "difficulty": "medium",
-    //     "question": "Which of these is NOT a part of the structure of a typical neuron?",
-    //     "correct_answer": "Islets of Langerhans",
-    //     "incorrect_answers": [
-    //         "Node of Ranvier",
-    //         "Schwann cell",
-    //         "Myelin sheath"
-    //     ]
-    // },
-]
+let questions = [];
 
 
 const LINK = 'https://opentdb.com/api.php?amount=20&category=21&difficulty=medium&type=multiple';
@@ -143,7 +50,7 @@ async function startGame(){
 const getNewQuestions=()=>{
     if(availableQuestions.length==0||counter> MAX_QUESTIONS){
         localStorage.setItem('quizScore',JSON.stringify(score));
-        //return window.location.assign('./end.html');
+        return window.location.assign('./end.html');
     }
         
     congressBar.style.width= `${(counter/questions.length)*100}%`;
