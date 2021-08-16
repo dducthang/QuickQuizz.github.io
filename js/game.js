@@ -7,7 +7,7 @@ const congressBar = document.getElementById('congress-bar-full');
 let questions = [];
 
 
-const LINK = 'https://opentdb.com/api.php?amount=20&category=21&difficulty=medium&type=multiple';
+const LINK = 'https://opentdb.com/api.php?amount=5&category=21&difficulty=medium&type=multiple';
 const MAX_QUESTIONS = 12;
 const POINT =10;
 
@@ -48,9 +48,9 @@ async function startGame(){
 }
 
 const getNewQuestions=()=>{
-    if(availableQuestions.length==0||counter> MAX_QUESTIONS){
+    if(availableQuestions.length==0||counter> questions.length){
         localStorage.setItem('quizScore',JSON.stringify(score));
-        return window.location.assign('./end.html');
+        return window.location.assign('../end.html');
     }
         
     congressBar.style.width= `${(counter/questions.length)*100}%`;

@@ -1,0 +1,30 @@
+.container{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.big-text{
+    display: flex;
+    justify-content:center;
+}
+
+.player-list{
+    width: 70%;
+    list-style: none;
+    padding: 0;
+}
+.player{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center ;
+    font-size: 2rem;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 30px;
+}

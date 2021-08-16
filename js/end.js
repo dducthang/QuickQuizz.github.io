@@ -3,7 +3,11 @@ const finalScore = document.getElementById('final-score');
 const submitUsername = document.getElementById('submit-username');
 const username = document.getElementById('username');
 const saveBtn = document.getElementById('save-btn');
+const dummyText = document.getElementById('dummy-text');
+
 let highScore =[];
+
+let redirect = false;
 
 finalScore.innerText=localStorage.getItem('quizScore');
 
@@ -13,6 +17,7 @@ username.addEventListener('keyup', ()=>{
 
 const saveHighScore=function(event)
 {
+    event.preventDefault();
     const name= username.value;
     const player={
         name:name,
@@ -28,7 +33,7 @@ const saveHighScore=function(event)
             highScore.push(player);
         else if(highScore[0].score>=player.score){
             alert('Beat the top 10 player to be recorded your score!!');
-            return;
+            window.location.assign('/');
         }
         else {
             highScore.splice(0, 1);
@@ -40,5 +45,8 @@ const saveHighScore=function(event)
         return a.score-b.score;
     });
     localStorage.setItem('highScore',JSON.stringify(highScore));
-    return window.location.assign('./index.html');
+    window.location.assign('/');
 }
+
+
+
