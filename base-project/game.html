@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="./js/game.js"defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="hud">
+            <div id ="hud-left" class="hud-item">
+                <div id="congress-text">
+                    <h3 class="hud-prefix">
+                        Question:
+                    </h3>
+                    <h3 id="question-counter">
+                        1/3
+                    </h3>
+                </div>
+                <div id="congress-bar">
+                    <div id="congress-bar-full"></div>
+                </div>
+            </div>
+            <div class="hud-item">
+                <h3 class="hud-prefix">
+                    Score:
+                </h3>
+                <h3 class="hud-content" id="score">
+                    10
+                </h3>
+            </div>
+        </div>
+        <div id="game" class="justify-center flex-column">
+            <h3 id="question">What is the answer of this question?</h3>
+            <div class="choice-container" >
+                <p class="choice-prefix" data-choice="1">A</p>
+                <div class="choice-text" >
+                    <div class="answer">choice</div>
+                    <div class="feedback hidden">x</div>
+                </div>
+            </div>
+            <div class="choice-container" >
+                <p class="choice-prefix" data-choice="2">B</p>
+                <div class="choice-text" >
+                    <div class="answer">choice</div>
+                    <div class="feedback hidden">x</div>
+                </div>
+            </div>
+            <div class="choice-container" >
+                <p class="choice-prefix" data-choice="3">C</p>
+                <div class="choice-text" >
+                    <div class="answer">choice</div>
+                    <div class="feedback hidden">x</div>
+                </div>
+            </div>
+            <div class="choice-container" >
+                <p class="choice-prefix" data-choice="4">D</p>
+                <div class="choice-text" >
+                    <div class="answer">choice</div>
+                    <div class="feedback hidden">x</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
