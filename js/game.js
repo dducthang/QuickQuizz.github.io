@@ -66,13 +66,18 @@ const getRandomInt=(min, max)=>{
 }
 
 async function getQuestions(cate, diffi){
-    let numberCate;
-    links.forEach(element=>{
-        if(element.name==cate){
-            numberCate=element.number;
-        }
-    })
-    LINK=`https://opentdb.com/api.php?amount=20&category=${numberCate}&difficulty=${diffi}&type=multiple`;
+    if(cate=='none'||diffi=='none'){
+        LINK=`https://opentdb.com/api.php?amount=20&category=21&difficulty=easy&type=multiple`;
+    }
+    else{
+        let numberCate;
+        links.forEach(element=>{
+            if(element.name==cate){
+                numberCate=element.number;
+            }
+        })
+        LINK=`https://opentdb.com/api.php?amount=20&category=${numberCate}&difficulty=${diffi}&type=multiple`;
+    }
     return fetch(LINK)
     .then(response=>{
         if(response.status>=200 && response.status <300)
@@ -98,6 +103,7 @@ async function startGame(cate, diffi){
     availableQuestions=[...questions];
     console.log(questions);
     modal.hide();
+    alert('Quick Quizz starts with default category sports and easy difficulty!!!');
     getNewQuestions();
 }
 
@@ -173,3 +179,5 @@ choices.forEach(choice=>{
         
     })
 })
+
+startGame('none','none');
