@@ -177,3 +177,10 @@ a{
       transform: rotate(360deg);
     }
   }
+
+  @media only screen and (min-width:370px)
+  {
+      #home{
+          margin-top: -150px;
+      }
+  }

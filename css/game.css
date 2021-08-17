@@ -223,3 +223,110 @@ select{
         opacity: 1;
     }
 }
+
+@media only screen and (min-width:370px)
+{
+    label{
+        display: none;
+    }
+
+    select{
+        width: 120px;
+    }
+
+    option{
+        font-size: 1rem;
+    }
+
+    h3{
+        font-size:1rem;
+    }
+
+    /* SIDE BAR */
+    #setting-form{
+        transform: translate(-50%,70%);
+        background-image: linear-gradient(to right, #ffffff75, rgba(255, 255, 255, 0.192));
+        padding: 10px;
+        border-radius: 8px;
+        width: 150px;
+        position: absolute;
+    }
+
+    /* CONTAINER */
+    /* HEDER CONTAINER */
+    #congress-bar{
+        width: 7rem;
+        height: 1.5rem;
+        border: 1px solid var(--primary-color);
+        margin-top: 10px;
+    }
+
+    #congress-bar-full{
+        height: 1.4rem;
+    }
+
+    #score{
+
+    }
+    /* BODY CONTAINER */
+    
+
+    .body-content{
+        flex-direction: column;
+        margin: 0 20px;
+    }
+
+    .side-bar{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .side-bar-sign{
+        font-size: 1.5rem;
+    }
+
+    .navigation{
+        flex-direction: row;
+    }
+
+    .settings{
+        justify-content: center;
+        margin-top: 70px;
+        position: relative;
+    }
+
+    /*  */
+    
+    .container{
+        margin-top: -80px;
+        width: 340px;
+        /* height: auto; */
+    }
+
+    .hud{
+
+    }
+
+    .hud-item{
+
+    }
+
+    .hud-content{
+        font-size:1rem;
+        font-weight: 1600;
+    }
+
+    .choice-text{
+        width: 100%;
+    }
+
+    .answer{
+        font-size: 0.8rem;
+        width: 90%;
+    }
+    
+    
+
+    
+}

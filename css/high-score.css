@@ -29,3 +29,26 @@
     width: 50%;
     margin-top: 30px;
 }
+
+@media only screen and (min-width:370px)
+{
+    .container{
+        margin-top: -100px;
+    }
+    .big-text{
+        font-size: 2rem;
+    }
+
+    .player{
+        font-size: 1rem;
+    }
+
+    .navigation{
+        width: 100%;
+    }
+    .btn{
+        font-size: 0.8rem;
+        margin: 10px;
+        width: 500px;
+    }
+}

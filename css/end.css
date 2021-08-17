@@ -13,3 +13,14 @@
     font-family: popins, sans-serif;
     outline: none;
 }
+
+
+@media only screen and (min-width:370px)
+{
+    #end{
+        margin-top: -200px;
+    }
+    #final-score{
+        margin: 10px;
+    }
+}
