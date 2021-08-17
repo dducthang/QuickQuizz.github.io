@@ -1,13 +1,48 @@
+import { Modal } from "../UI/modal.js";
+
 const game = document.getElementById('game');
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-prefix'));
 const questionCounter=document.getElementById('question-counter');
 const gameScore=document.getElementById('score');
 const congressBar = document.getElementById('congress-bar-full');
+const settingSign = document.getElementById('setting-sign');
+const settingForm = document.getElementById('setting-form');
+const submitSettings = document.getElementById('submit-settings');
+const category =document.getElementById('category');
+const difficulty =document.getElementById('difficulty');
+
 let questions = [];
+let links =[
+    {
+        number:'21',
+        name:'sports'
+    },
+    {
+        number:'17',
+        name:'science&nature'
+    },
+    {
+        number:'11',
+        name:'films'
+    },
+    {
+        number:'27',
+        name:'animals'
+    },
+    {
+        number:'26',
+        name:'celebrities'
+    },
+    {
+        number:'19',
+        name:'mathematics'
+    },
+
+]
 
 
-const LINK = 'https://opentdb.com/api.php?amount=20&category=21&difficulty=medium&type=multiple';
+let LINK ;
 const MAX_QUESTIONS = 12;
 const POINT =10;
 
@@ -16,13 +51,28 @@ let score =0;
 let availableQuestions=[];
 let acceptingAnswer =false;
 
+settingSign.addEventListener('click',()=>{
+    settingForm.classList.toggle('hidden');
+})
+
+submitSettings.addEventListener('click',()=>{
+    startGame(category.value, difficulty.value);
+})
+
 const getRandomInt=(min, max)=>{
     max = Math.floor(max);
     min = Math.ceil(min);
     return Math.floor(Math.random()*(max-min)+min);
 }
 
-async function getQuestions(){
+async function getQuestions(cate, diffi){
+    let numberCate;
+    links.forEach(element=>{
+        if(element.name==cate){
+            numberCate=element.number;
+        }
+    })
+    LINK=`https://opentdb.com/api.php?amount=20&category=${numberCate}&difficulty=${diffi}&type=multiple`;
     return fetch(LINK)
     .then(response=>{
         if(response.status>=200 && response.status <300)
@@ -38,19 +88,27 @@ async function getQuestions(){
     });
 }
 
-async function startGame(){
+async function startGame(cate, diffi){
     score = 0;
-    let response = await getQuestions();
+    settingForm.classList.add('hidden');
+    const modal = new Modal('loading-modal-content', 'Something wrong happens!!!');
+    modal.show();
+    let response = await getQuestions(cate, diffi);
     questions = response.results;
     availableQuestions=[...questions];
     console.log(questions);
+    modal.hide();
     getNewQuestions();
 }
 
 const getNewQuestions=()=>{
     if(availableQuestions.length==0||counter> questions.length){
         localStorage.setItem('quizScore',JSON.stringify(score));
-        return window.location.assign('./end.html');
+        const modal = new Modal('loading-modal-content','Something wrong happens!!!');
+        modal.show();
+        setTimeout(() => {
+            return window.location.assign('./end.html');
+        }, 1000);
     }
         
     congressBar.style.width= `${(counter/questions.length)*100}%`;
@@ -115,5 +173,3 @@ choices.forEach(choice=>{
         
     })
 })
-
-startGame();

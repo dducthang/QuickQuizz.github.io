@@ -7,65 +7,111 @@
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="./css/game.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="./js/game.js"defer></script>
+    <script type ="module" src="./js/game.js"defer></script>
     <title>Hanging with Deone</title>
 </head>
 <body>
-    <div class="container">
-        <div class="hud">
-            <div id ="hud-left" class="hud-item">
-                <div id="congress-text">
-                    <h3 class="hud-prefix">
-                        Question:
-                    </h3>
-                    <h3 id="question-counter">
-                        
-                    </h3>
-                </div>
-                <div id="congress-bar">
-                    <div id="congress-bar-full"></div>
-                </div>
+    <template id="modal-template">
+        <div class="backdrop"></div>
+        <div class="modal"></div>
+    </template>
+    <template id="loading-modal-content">
+        <div class="modal__content centered">
+            <div class="lds-dual-ring"></div>
+        </div>
+    </template>
+    <div class="body-content">
+        <div class="side-bar flex-column">
+            <!-- navigation margin-top -->
+            <div class="navigation side-bar-sign flex-column text-center">
+                <a href="./index.html"><i class="fas fa-home"></i></a>
+                <i class="fas fa-bars"></i>
             </div>
-            <div class="hud-item">
-                <h3 class="hud-prefix">
-                    Score:
-                </h3>
-                <h3 class="hud-content" id="score">
-                    0
-                </h3>
+            <div class="settings side-bar-sign flex-column text-center justify-center">
+                <i id="setting-sign" class="fas fa-cogs"></i>
+                <form id= "setting-form" class="hidden">
+                    <div class="form-control">
+                        <label class="setting-text" for="category">Category</label>
+                        <select name="categories" id="category">
+                            <option value="none">Any category</option>
+                            <option value="science&nature">Science & Nature</option>
+                            <option value="sports">Sports</option>
+                            <option value="films">Films</option>
+                            <option value="animals">Animals</option>
+                            <option value="celebrities">Celebities</option>
+                            <option value="mathematics">Mathematics</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label class="setting-text" for="difficulty">Difficulty</label>
+                        <select name="difficulty" id="difficulty">
+                            <option value="none">Any difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div type="submit" class ="btn" id="submit-settings">Refresh game</div>
+                </form>
             </div>
         </div>
-        <div id="game" class="justify-center flex-column">
-            <h3 id="question">What is the answer of this question?</h3>
-            <div class="choice-container" >
-                <p class="choice-prefix" data-choice="1">A</p>
-                <div class="choice-text" >
-                    <div class="answer">choice</div>
-                    <div class="feedback hidden">x</div>
+        <div class="container">
+            <div class="hud">
+                <div id ="hud-left" class="hud-item">
+                    <div id="congress-text">
+                        <h3 class="hud-prefix">
+                            Question:
+                        </h3>
+                        <h3 id="question-counter">
+                            
+                        </h3>
+                    </div>
+                    <div id="congress-bar">
+                        <div id="congress-bar-full"></div>
+                    </div>
+                </div>
+                <div class="hud-item">
+                    <h3 class="hud-prefix">
+                        Score:
+                    </h3>
+                    <h3 class="hud-content" id="score">
+                        0
+                    </h3>
                 </div>
             </div>
-            <div class="choice-container" >
-                <p class="choice-prefix" data-choice="2">B</p>
-                <div class="choice-text" >
-                    <div class="answer">choice</div>
-                    <div class="feedback hidden">x</div>
+            <div id="game" class="justify-center flex-column">
+                <h3 id="question">What is the answer of this question?</h3>
+                <div class="choice-container" >
+                    <p class="choice-prefix" data-choice="1">A</p>
+                    <div class="choice-text" >
+                        <div class="answer">choice</div>
+                        <div class="feedback hidden">x</div>
+                    </div>
                 </div>
-            </div>
-            <div class="choice-container" >
-                <p class="choice-prefix" data-choice="3">C</p>
-                <div class="choice-text" >
-                    <div class="answer">choice</div>
-                    <div class="feedback hidden">x</div>
+                <div class="choice-container" >
+                    <p class="choice-prefix" data-choice="2">B</p>
+                    <div class="choice-text" >
+                        <div class="answer">choice</div>
+                        <div class="feedback hidden">x</div>
+                    </div>
                 </div>
-            </div>
-            <div class="choice-container" >
-                <p class="choice-prefix" data-choice="4">D</p>
-                <div class="choice-text" >
-                    <div class="answer">choice</div>
-                    <div class="feedback hidden">x</div>
+                <div class="choice-container" >
+                    <p class="choice-prefix" data-choice="3">C</p>
+                    <div class="choice-text" >
+                        <div class="answer">choice</div>
+                        <div class="feedback hidden">x</div>
+                    </div>
+                </div>
+                <div class="choice-container" >
+                    <p class="choice-prefix" data-choice="4">D</p>
+                    <div class="choice-text" >
+                        <div class="answer">choice</div>
+                        <div class="feedback hidden">x</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
 </body>
 </html>

@@ -1,5 +1,5 @@
 let players = JSON.parse(localStorage.getItem('highScore'));
-players.forEach(element => {
+players.slice().reverse().forEach(element => {
     let player = document.createElement('li');
     player.classList.add('player');
     let playerName = document.createElement('div');

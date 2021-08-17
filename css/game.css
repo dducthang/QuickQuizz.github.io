@@ -1,7 +1,16 @@
+select{
+    font-family: poppins, sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: rgb(248, 204, 139);
+    color:rgb(133, 18, 18);
+}
+
 #game{
     display: flex;
     justify-content: center;
-    margin-left: 200px;
+    margin: 0 auto;
+    width: 90%;
 }
 
 #question{
@@ -37,10 +46,73 @@
     padding: 0;
 }
 
-.container{
-    max-width: 700px;
+#setting-form{
+    transform: translate(60%, -70%);
+    background-image: linear-gradient(to right, #ffffff75, rgba(255, 255, 255, 0.192));
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    /* height: 100px; */
+}
+
+#submit-settings{
+    font-size:0.7rem;
+    padding: 3px;
+    margin:0 auto;
+
+}
+
+.body-content{
+    display: flex;
+    margin: 0 50px;
+}
+
+.side-bar{
+    width: 200px;
+    display: flex;
+    flex:column;
+}
+
+.side-bar-sign{
+    font-size: 3rem;
+}
+
+.navigation{
     display: flex;
     flex-direction: column;
+    font-size: 3rem;
+    margin-top: 70px;
+    flex: 3;
+}
+
+.settings{
+    flex:1;
+    display: flex;
+    justify-content: start;
+}
+
+.setting-text{
+    font-size: 1rem; 
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+
+
+.form-control{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0; 
+}
+
+
+.navigation i{
+    margin: 10px;
+}
+
+.container{
+    flex-direction: column;
+    width: 600px;
 }
 
 .hud{
@@ -54,9 +126,6 @@
     color:rgba(243, 171, 17, 0.5);
     margin: 0;
 }
-
-
-
 
 .hud-content{
     font-size:3rem;
@@ -91,7 +160,7 @@
 }
 
 .choice-text{
-    width: 700px; 
+    width: 90%; 
     display: flex;
 }
 
