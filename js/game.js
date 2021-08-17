@@ -103,7 +103,8 @@ async function startGame(cate, diffi){
     availableQuestions=[...questions];
     console.log(questions);
     modal.hide();
-    alert('Quick Quizz starts with default category sports and easy difficulty!!!');
+    if(cate=='none'||diffi=='none')
+        alert('Quick Quizz starts with default category sports and easy difficulty!!!');
     getNewQuestions();
 }
 
