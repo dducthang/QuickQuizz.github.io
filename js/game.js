@@ -6,6 +6,7 @@ const choices = Array.from(document.getElementsByClassName('choice-prefix'));
 const questionCounter=document.getElementById('question-counter');
 const gameScore=document.getElementById('score');
 const congressBar = document.getElementById('congress-bar-full');
+const home = document.getElementById('home');
 const settingSign = document.getElementById('setting-sign');
 const settingForm = document.getElementById('setting-form');
 const submitSettings = document.getElementById('submit-settings');
@@ -57,6 +58,11 @@ settingSign.addEventListener('click',()=>{
 
 submitSettings.addEventListener('click',()=>{
     startGame(category.value, difficulty.value);
+})
+
+home.addEventListener('click',()=>{
+    // console.log('eiyo');
+    return window.location.assign('./');
 })
 
 const getRandomInt=(min, max)=>{

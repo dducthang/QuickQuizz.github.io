@@ -46,13 +46,20 @@ select{
     padding: 0;
 }
 
+#setting-sign{
+    position: absolute;
+    top:50%;
+    right: 50%;
+    transform:translate(50%, -150%);
+    /* bottom:50%; */
+}
+
 #setting-form{
-    transform: translate(60%, -70%);
+    transform: translate(60%, -30%);
     background-image: linear-gradient(to right, #ffffff75, rgba(255, 255, 255, 0.192));
     padding: 10px;
     border-radius: 8px;
     width: 250px;
-    /* height: 100px; */
 }
 
 #submit-settings{
@@ -89,6 +96,7 @@ select{
     flex:1;
     display: flex;
     justify-content: start;
+    position: relative;
 }
 
 .setting-text{
@@ -224,7 +232,7 @@ select{
     }
 }
 
-@media only screen and (min-width:370px)
+@media only screen and (min-width:370px) and (max-width:450px)
 {
     label{
         display: none;
@@ -243,6 +251,11 @@ select{
     }
 
     /* SIDE BAR */
+    /* NAVIGATION */
+    #home{
+        margin-top: 10px;
+    }
+    /* SETTINGS */
     #setting-form{
         transform: translate(-50%,70%);
         background-image: linear-gradient(to right, #ffffff75, rgba(255, 255, 255, 0.192));
@@ -250,6 +263,11 @@ select{
         border-radius: 8px;
         width: 150px;
         position: absolute;
+    }
+    #setting-sign{
+        top:50%;
+        right: 50%;
+        transform:translate(50%, -50%);
     }
 
     /* CONTAINER */
@@ -269,8 +287,6 @@ select{
 
     }
     /* BODY CONTAINER */
-    
-
     .body-content{
         flex-direction: column;
         margin: 0 20px;
@@ -292,6 +308,7 @@ select{
 
     .settings{
         justify-content: center;
+        align-items:center;
         margin-top: 70px;
         position: relative;
     }

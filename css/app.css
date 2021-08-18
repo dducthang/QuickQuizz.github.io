@@ -53,6 +53,16 @@ a{
     color: var(--primary-color)
 }
 
+i{
+    cursor: pointer;
+}
+
+i:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(248, 179, 31, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
 /*  UTILITIES */
 
 .container{
@@ -178,7 +188,7 @@ a{
     }
   }
 
-  @media only screen and (min-width:370px)
+  @media only screen and (min-width:370px)and (max-width:450px)
   {
       #home{
           margin-top: -150px;
